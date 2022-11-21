@@ -1,22 +1,14 @@
-import { Navbar, Logo, NavbarLinks, Button, Input } from 'components';
+import { Navbar, Button, Input } from 'components';
 
 export function LoginPage() {
   return (
     <>
-      <Navbar>
-        <Logo />
-
-        <div className="flex items-center justify-center gap-4">
-          <NavbarLinks
-            items={[
-              { label: 'Início', href: '/' },
-              { label: 'Explorar', href: '/explorar' },
-              { label: 'Entrar', href: '/entrar' },
-            ]}
-          />
-          <Button>Criar nova conta</Button>
-        </div>
-      </Navbar>
+      <Navbar
+        links={[
+          { label: 'Início', href: '/' },
+          { label: 'Explorar', href: '/explorar' },
+        ]}
+      />
 
       <div className="w-full max-w-lg m-auto h-[calc(100vh-80px)] flex flex-col items-start justify-center gap-2">
         <h1 className="text-3xl font-bold">Login</h1>

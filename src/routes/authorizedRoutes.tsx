@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { FeedPage, NotFoundPage, ProfilePage } from 'pages';
+import { FeedPage, NewPostPage, NotFoundPage, ProfilePage } from 'pages';
 
 export const authorizedRouter = createBrowserRouter([
   {
@@ -11,6 +11,11 @@ export const authorizedRouter = createBrowserRouter([
   {
     path: '/perfil/:username',
     element: <ProfilePage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: '/post/novo',
+    element: <NewPostPage />,
     errorElement: <NotFoundPage />,
   },
 ]);

@@ -1,34 +1,14 @@
-import { Link } from 'react-router-dom';
-
-import {
-  Button,
-  FeedGrid,
-  Logo,
-  Navbar,
-  NavbarLinks,
-  UserDetailed,
-  UserNameSmall,
-} from 'components';
+import { FeedGrid, Navbar, UserDetailed } from 'components';
 
 export function ProfilePage() {
   return (
     <>
-      <Navbar>
-        <Link to="/">
-          <Logo />
-        </Link>
-
-        <div className="flex items-center justify-center gap-4">
-          <NavbarLinks
-            items={[
-              { label: 'Início', href: '/' },
-              { label: 'Explorar', href: '/explorar' },
-            ]}
-          />
-          <UserNameSmall userName="leobritob" onClick={() => {}} />
-          <Button>Criar novo post</Button>
-        </div>
-      </Navbar>
+      <Navbar
+        links={[
+          { label: 'Início', href: '/' },
+          { label: 'Explorar', href: '/explorar' },
+        ]}
+      />
 
       <section className="w-full max-w-5xl py-12 m-auto">
         <section className="w-full flex items-center justify-center p-4">

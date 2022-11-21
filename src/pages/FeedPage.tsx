@@ -1,38 +1,16 @@
 import { Link, useNavigate } from 'react-router-dom';
 
-import {
-  Button,
-  FeedCardList,
-  Logo,
-  Navbar,
-  NavbarLinks,
-  UserNameLarge,
-  UserNameSmall,
-} from 'components';
+import { FeedCardList, Navbar, UserNameLarge } from 'components';
 
 export function FeedPage() {
-  const navigate = useNavigate();
   return (
     <>
-      <Navbar>
-        <Link to="/">
-          <Logo />
-        </Link>
-
-        <div className="flex items-center justify-center gap-4">
-          <NavbarLinks
-            items={[
-              { label: 'Início', href: '/' },
-              { label: 'Explorar', href: '/explorar' },
-            ]}
-          />
-          <UserNameSmall
-            userName="leobritob"
-            onClick={() => navigate('/perfil/leobritob')}
-          />
-          <Button>Criar novo post</Button>
-        </div>
-      </Navbar>
+      <Navbar
+        links={[
+          { label: 'Início', href: '/' },
+          { label: 'Explorar', href: '/explorar' },
+        ]}
+      />
 
       <section className="w-full max-w-5xl py-12 m-auto grid grid-cols-1 lg:grid-cols-[1fr,380px]">
         <section className="w-full">

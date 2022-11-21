@@ -1,21 +1,16 @@
 type Props = {
-  type?: 'text' | 'email' | 'password';
   name: string;
   id: string;
   placeholder: string;
   label?: string;
 };
 
-export function Input({ type = 'text', name, label, id, placeholder }: Props) {
+export function Textarea({ name, id, label, placeholder }: Props) {
   return (
     <>
-      {label && (
-        <label htmlFor={name} className="text-sm text-black pb-2">
-          {label}
-        </label>
-      )}
-      <input
-        type={type}
+      {label && <label htmlFor={name} className="text-sm text-black">{label}</label>}
+      <textarea
+        rows={5}
         name={name}
         id={id}
         placeholder={placeholder}
