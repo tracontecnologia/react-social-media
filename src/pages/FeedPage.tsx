@@ -1,5 +1,3 @@
-import { Link, useNavigate } from 'react-router-dom';
-
 import { FeedCardList, Navbar, UserNameLarge } from 'components';
 
 export function FeedPage() {

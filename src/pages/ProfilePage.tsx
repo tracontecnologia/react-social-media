@@ -1,6 +1,10 @@
-import { FeedGrid, Navbar, UserDetailed } from 'components';
+import { useState } from 'react';
+
+import { FeedGrid, Navbar, PostModal, UserDetailed } from 'components';
 
 export function ProfilePage() {
+  const [isPostModalVisible, setIsPostModalVisible] = useState(false);
+
   return (
     <>
       <Navbar
@@ -8,6 +12,11 @@ export function ProfilePage() {
           { label: 'Início', href: '/' },
           { label: 'Explorar', href: '/explorar' },
         ]}
+      />
+
+      <PostModal
+        isVisible={isPostModalVisible}
+        setIsVisible={setIsPostModalVisible}
       />
 
       <section className="w-full max-w-5xl py-12 m-auto">
@@ -23,6 +32,7 @@ export function ProfilePage() {
         </section>
         <section className="w-full p-4">
           <FeedGrid
+            onClick={(item) => setIsPostModalVisible(true)}
             items={new Array(9).fill({
               imgSrc: '/img/feed.png',
               description: 'lorem ipsum',
